@@ -7,9 +7,9 @@ import {Link} from "react-router-dom";
 const Navbar = ()=>{
     return(
         <div>
-            <nav className="navbar navbar-expand-lg bg-body-tertiary">
+            <nav className="navbar bg-dark navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
     <div className="container-fluid">
-        <Link className="navbar-brand" to="/">Posts</Link>
+        <Link className="navbar-brand" to="/hello">Posts</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
         </button>
@@ -19,16 +19,16 @@ const Navbar = ()=>{
             <Link className="nav-link active" aria-current="page" to="/">Recipe</Link>
             </li>
             <li className="nav-item">
-            <a className="nav-link active" href="#">Login</a>
+            <Link className="nav-link active" to="/login">Login</Link>
             </li>
             <li className="nav-item">
-            <a className="nav-link active" href="#">Sign up</a>
+            <Link className="nav-link active" to="/signup">Sign up</Link>
             </li>
             <li className="nav-item">
-            <a className="nav-link active" href="#">Create Post</a>
+            <Link className="nav-link active" to="/create-recipe">Create Post</Link>
             </li>
             <li className="nav-item">
-            <a className="nav-link active" href="#">Log out</a>
+            <Link className="nav-link active" to="#">Log out</Link>
             </li>
             {/* <li className="nav-item">
                 <a className="nav-link active" href="#" tabindex="-1" aria="true">Disabled</a>

@@ -19,3 +19,5 @@ pytz==2023.3
 SQLAlchemy==2.0.17
 typing_extensions==4.7.0
 Werkzeug==2.3.6
+flask_migrate
+flask_cors

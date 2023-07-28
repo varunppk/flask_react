@@ -31,7 +31,7 @@ class SignUp(Resource):
     @auth_ns.expect(signup_model)
     def post(self):
         data=request.get_json()
-
+        print(data)
         username=data.get('username')
         db_user=User.query.filter_by(username=username).first()
         if db_user is not None:
@@ -44,7 +44,7 @@ class SignUp(Resource):
         )
         new_user.save()
 
-        return jsonify({"message": "User created successfully"}),201
+        return jsonify({"message": "User created successfully"})
 
 
 @auth_ns.route('/login')
