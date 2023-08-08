@@ -31,7 +31,6 @@ class SignUp(Resource):
     @auth_ns.expect(signup_model)
     def post(self):
         data=request.get_json()
-        print(data)
         username=data.get('username')
         db_user=User.query.filter_by(username=username).first()
         if db_user is not None:
@@ -73,7 +72,6 @@ class RefreshResource(Resource):
     @jwt_required(refresh=True)
     def post(self):
         current_user=get_jwt_identity()
-        print(current_user)
         new_access_token=create_access_token(identity=current_user)
         return make_response(jsonify({"access_token":new_access_token}),200)
     

@@ -1,19 +1,20 @@
-from exts import db
+from flask_sqlalchemy import SQLAlchemy
 
+db=SQLAlchemy()
 """
-class Recipe:
+class Post:
     id: int primary key
     title: str
     description: str (text)
 """
 
-class Recipe(db.Model):
+class Post(db.Model):
     id=db.Column(db.Integer(),primary_key=True)
     title=db.Column(db.String(),nullable=False)
     description=db.Column(db.Text(),nullable=False)
 
     def __repr__(self):
-        return f"<Recipe {self.title}>"
+        return f"<Post {self.title}>"
     
     def save(self):
         db.session.add(self)
